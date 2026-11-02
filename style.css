@@ -1398,8 +1398,17 @@ button {
     width: 72px;
   }
 
-  .episode .ep-extra {
+  .episode .ep-extra:not(.ep-date) {
     display: none;
+  }
+
+  .episode .ep-meta {
+    gap: 0.5em;
+    font-size: 0.8rem;
+  }
+
+  .episode .ep-num {
+    letter-spacing: 0.1em;
   }
 
   .listen-panel {

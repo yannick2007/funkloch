@@ -76,6 +76,10 @@
     <symbol id="i-castbox" viewBox="0 0 24 24"><path d="M12 2.7 20.05 7.35v9.3L12 21.3l-8.05-4.65v-9.3z" fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><g fill="none" stroke="var(--icon-cut, #0b0e12)" stroke-width="1.5" stroke-linecap="round"><path d="M7.3 12.2h6M7.3 10.9v2.6M9.3 9.4v5.2M11.3 8.6v6.6M13.3 9.8v4.4M16.3 11.6v1.2"/></g></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M6.7 3.2v3.5h3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><text x="12" y="15.3" text-anchor="middle" font-size="7.5" font-weight="700" font-family="system-ui, sans-serif" fill="currentColor">15</text></symbol>
+    <symbol id="i-fwd" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M17.3 3.2v3.5h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><text x="12" y="15.3" text-anchor="middle" font-size="7.5" font-weight="700" font-family="system-ui, sans-serif" fill="currentColor">30</text></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11m0-11-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </svg>
@@ -186,17 +190,18 @@
             -->
 
             <div class="listen-row">
-              <a class="btn btn-glow" href="https://open.spotify.com/episode/0dTtVom3WzLJnmXMrryJrS" target="_blank" rel="noopener">
+              <button class="btn btn-glow" type="button" data-play data-src="https://anchor.fm/s/11906bb74/podcast/play/128524692/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-31%2F435550760-44100-2-3807d82c8b51c.mp3" data-num="Folge 02" data-title="1kg Nudle ufem WC choche">
+                <svg class="icon icon-play" aria-hidden="true"><use href="#i-play"/></svg>
+                <svg class="icon icon-pause" aria-hidden="true"><use href="#i-pause"/></svg>
+                <span data-label>Folge abspielen</span>
+              </button>
+              <a class="btn btn-ghost" href="https://open.spotify.com/episode/0dTtVom3WzLJnmXMrryJrS" target="_blank" rel="noopener">
                 <svg class="icon" aria-hidden="true"><use href="#i-spotify"/></svg>
-                Auf Spotify hören
+                Spotify
               </a>
               <a class="btn btn-ghost" href="https://podcasts.apple.com/ch/podcast/1kg-nudle-ufem-wc-choche-2/id6826890867?i=1000799248831" target="_blank" rel="noopener">
                 <svg class="icon" aria-hidden="true"><use href="#i-apple"/></svg>
                 Apple Podcasts
-              </a>
-              <a class="btn btn-ghost" href="#hoeren">
-                Andere Plattformen
-                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
               </a>
             </div>
           </div>
@@ -220,8 +225,52 @@
           </a>
         </header>
 
-        <!-- Neue Folgen einfach oben in diese Liste kopieren -->
-        <ol class="episodes" reversed>
+        <!-- Neue Folgen unten anfügen, direkt vor dem Platzhalter "Signal wird gesucht" -->
+        <ol class="episodes">
+          <li class="episode plate reveal">
+            <div class="episode-link">
+              <picture class="episode-cover">
+                <source srcset="assets/img/cover-400.webp" type="image/webp">
+                <img src="assets/img/cover-400.jpg" alt="" width="400" height="400" loading="lazy">
+              </picture>
+              <div class="episode-body">
+                <p class="ep-meta">
+                  <span class="ep-num">Folge 01</span>
+                  <span class="ep-extra ep-date"><span class="dot" aria-hidden="true"></span><time datetime="2026-10-25">25. Okt 2026</time></span>
+                  <span class="ep-extra"><span class="dot" aria-hidden="true"></span>33 min</span>
+                </p>
+                <h3 class="episode-title">«Ah schowider en Podcast»</h3>
+                <p class="episode-text">Wie alles angefangen hat.</p>
+              </div>
+              <button class="episode-play" type="button" data-play data-src="https://anchor.fm/s/11906bb74/podcast/play/127972330/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-23%2F434851731-44100-2-8e6868eae4bb7.mp3" data-num="Folge 01" data-title="Ah schowider en Podcast" aria-label="Folge 01 abspielen">
+                <svg class="icon icon-play" aria-hidden="true"><use href="#i-play"/></svg>
+                <svg class="icon icon-pause" aria-hidden="true"><use href="#i-pause"/></svg>
+              </button>
+            </div>
+          </li>
+
+          <li class="episode plate reveal">
+            <div class="episode-link">
+              <picture class="episode-cover">
+                <source srcset="assets/img/cover-400.webp" type="image/webp">
+                <img src="assets/img/cover-400.jpg" alt="" width="400" height="400" loading="lazy">
+              </picture>
+              <div class="episode-body">
+                <p class="ep-meta">
+                  <span class="ep-num">Folge 02</span>
+                  <span class="ep-extra ep-date"><span class="dot" aria-hidden="true"></span><time datetime="2026-11-01">1. Nov 2026</time></span>
+                  <span class="ep-extra"><span class="dot" aria-hidden="true"></span>28 min</span>
+                </p>
+                <h3 class="episode-title">«1kg Nudle ufem WC choche»</h3>
+                <p class="episode-text">Nudle, WCs und luzides Träume.</p>
+              </div>
+              <button class="episode-play" type="button" data-play data-src="https://anchor.fm/s/11906bb74/podcast/play/128524692/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-31%2F435550760-44100-2-3807d82c8b51c.mp3" data-num="Folge 02" data-title="1kg Nudle ufem WC choche" aria-label="Folge 02 abspielen">
+                <svg class="icon icon-play" aria-hidden="true"><use href="#i-play"/></svg>
+                <svg class="icon icon-pause" aria-hidden="true"><use href="#i-pause"/></svg>
+              </button>
+            </div>
+          </li>
+
           <li class="episode episode-soon plate reveal" aria-label="Folge 03 – bald verfügbar">
             <div class="episode-link">
               <div class="episode-cover static" aria-hidden="true"></div>
@@ -231,50 +280,6 @@
                 <p class="episode-text">Bald auf Sendung.</p>
               </div>
             </div>
-          </li>
-
-          <li class="episode plate reveal">
-            <a class="episode-link" href="https://open.spotify.com/episode/0dTtVom3WzLJnmXMrryJrS" target="_blank" rel="noopener">
-              <picture class="episode-cover">
-                <source srcset="assets/img/cover-400.webp" type="image/webp">
-                <img src="assets/img/cover-400.jpg" alt="" width="400" height="400" loading="lazy">
-              </picture>
-              <div class="episode-body">
-                <p class="ep-meta">
-                  <span class="ep-num">Folge 02</span>
-                  <span class="dot" aria-hidden="true"></span>
-                  <time datetime="2026-11-01">1. Nov 2026</time>
-                  <span class="ep-extra"><span class="dot" aria-hidden="true"></span>28 min</span>
-                </p>
-                <h3 class="episode-title">«1kg Nudle ufem WC choche»</h3>
-                <p class="episode-text">Nudle, WCs und luzides Träume.</p>
-              </div>
-              <span class="episode-play" aria-hidden="true">
-                <svg class="icon"><use href="#i-play"/></svg>
-              </span>
-            </a>
-          </li>
-
-          <li class="episode plate reveal">
-            <a class="episode-link" href="https://podcasts.apple.com/ch/podcast/ah-schowider-en-podcast/id6826890867?i=1000798042797" target="_blank" rel="noopener">
-              <picture class="episode-cover">
-                <source srcset="assets/img/cover-400.webp" type="image/webp">
-                <img src="assets/img/cover-400.jpg" alt="" width="400" height="400" loading="lazy">
-              </picture>
-              <div class="episode-body">
-                <p class="ep-meta">
-                  <span class="ep-num">Folge 01</span>
-                  <span class="dot" aria-hidden="true"></span>
-                  <time datetime="2026-10-25">25. Okt 2026</time>
-                  <span class="ep-extra"><span class="dot" aria-hidden="true"></span>33 min</span>
-                </p>
-                <h3 class="episode-title">«Ah schowider en Podcast»</h3>
-                <p class="episode-text">Wie alles angefangen hat.</p>
-              </div>
-              <span class="episode-play" aria-hidden="true">
-                <svg class="icon"><use href="#i-play"/></svg>
-              </span>
-            </a>
           </li>
         </ol>
       </div>
@@ -358,6 +363,29 @@
     </section>
 
   </main>
+
+  <!-- ============ PLAYER ============ -->
+  <div class="player" data-player role="region" aria-label="Funkloch Player">
+    <img class="player-cover" src="assets/img/cover-400.webp" alt="" width="400" height="400">
+    <div class="player-info">
+      <p class="player-num" data-player-num>Funkloch</p>
+      <p class="player-title" data-player-title></p>
+    </div>
+    <div class="player-controls">
+      <button class="player-btn player-skip" type="button" data-skip="-15" aria-label="15 Sekunden zurück"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg></button>
+      <button class="player-btn player-toggle" type="button" data-player-toggle aria-label="Abspielen">
+        <svg class="icon icon-play" aria-hidden="true"><use href="#i-play"/></svg>
+        <svg class="icon icon-pause" aria-hidden="true"><use href="#i-pause"/></svg>
+      </button>
+      <button class="player-btn player-skip" type="button" data-skip="30" aria-label="30 Sekunden vor"><svg class="icon" aria-hidden="true"><use href="#i-fwd"/></svg></button>
+    </div>
+    <div class="player-progress">
+      <span class="player-time" data-time-current>0:00</span>
+      <input class="player-seek" type="range" min="0" max="1000" step="1" value="0" data-seek aria-label="Position in der Folge">
+      <span class="player-time" data-time-total>0:00</span>
+    </div>
+    <button class="player-btn player-close" type="button" data-player-close aria-label="Player schliessen"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
