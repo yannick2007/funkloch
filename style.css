@@ -962,7 +962,7 @@ button {
 
 .platforms {
   display: grid;
-  grid-template-columns: repeat(2, minmax(190px, 1fr));
+  grid-template-columns: repeat(3, minmax(170px, 1fr));
   gap: 10px;
 }
 
@@ -1268,6 +1268,10 @@ button {
 
   .listen-panel {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .platforms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .footer-grid {
